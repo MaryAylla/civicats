@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fundamentação teórica, metodologia, acessibilidade, resultados de campo e validação científica do projeto CiviCats para o Ceará Científico.">
+  <meta name="theme-color" content="#7ecbf7">
+
+  <title>CiviCats | Metodologia & Pesquisa Científica</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/cat-avatar.png">
+
+  <!-- Google Fonts: Press Start 2P + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Acessibilidade: Atalho de Teclado -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho Institucional -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+      </a>
+
+      <!-- Menu Mobile -->
+      <button 
+        class="mobile-toggle" 
+        id="menu-toggle" 
+        aria-label="Abrir menu de navegação" 
+        aria-expanded="false" 
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navegação Principal -->
+      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="modulos.html" class="nav-link">Os Módulos</a></li>
+          <li><a href="metodologia.html" class="nav-link active" aria-current="page">Metodologia</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre & Contato</a></li>
+          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- Cabeçalho da Página -->
+    <section class="page-header">
+      <div class="container">
+        <span class="pixel-badge">Ceará Científico • Documentação Científica</span>
+        <h1 class="page-title">Metodologia & Pesquisa</h1>
+        <p class="page-subtitle">
+          O rigor experimental, a arquitetura de software na Godot 4 e a validação empírica realizada em ambiente escolar público.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo dos 4 Passos Metodológicos -->
+    <section class="section section-method-steps">
+      <div class="container">
+        
+        <div class="section-header reveal-item">
+          <h2 class="section-title">Fluxo Experimental</h2>
+          <p class="section-desc">Estrutura metodológica quanti-qualitativa aplicada durante o ciclo de vida do projeto.</p>
+        </div>
+
+        <div class="grid grid-4">
+          
+          <div class="card step-summary-card reveal-item" data-delay="100">
+            <span class="step-summary-badge">Etapa 01</span>
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3 class="step-summary-title">Arte & UI</h3>
+            <p class="step-summary-desc">Criação autoral em malha 32x32 no Aseprite com paletas acessíveis.</p>
+          </div>
+
+          <div class="card step-summary-card reveal-item" data-delay="200">
+            <span class="step-summary-badge">Etapa 02</span>
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="step-summary-title">Engenharia</h3>
+            <p class="step-summary-desc">Nós de controle, física e colisores implementados na Godot 4.</p>
+          </div>
+
+          <div class="card step-summary-card reveal-item" data-delay="300">
+            <span class="step-summary-badge">Etapa 03</span>
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="step-summary-title">Modularidade</h3>
+            <p class="step-summary-desc">Divisão independente: Módulo Mirim e Módulo Democracia.</p>
+          </div>
+
+          <div class="card step-summary-card reveal-item" data-delay="400">
+            <span class="step-summary-badge">Etapa 04</span>
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="step-summary-title">Validação</h3>
+            <p class="step-summary-desc">Testes de usabilidade e questionários na E.E.F. Senador Carlos Jereissati.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Artigo Científico Estruturado -->
+    <section class="section section-paper-body">
+      <div class="container academic-container">
+        
+        <!-- 01. INTRODUÇÃO -->
+        <article class="paper-section-box reveal-item">
+          <div class="paper-section-header">
+            <span class="paper-tag-num">01</span>
+            <div>
+              <span class="paper-eyebrow">Contextualização & Problema</span>
+              <h2 class="paper-main-title">Introdução</h2>
+            </div>
+          </div>
+
+          <div class="paper-text-content">
+            <p>
+              A compreensão efetiva sobre mecanismos democráticos, direitos e deveres sociais ainda representa um desafio na formação básica de cidadãos, agravada pela carência de ferramentas educativas digitais acessíveis e interativas.
+            </p>
+            <p>
+              Diante desse cenário, o projeto <strong>CiviCats</strong> propõe o desenvolvimento de um jogo digital 2D voltado à simulação de processos democráticos e noções de cidadania para diferentes faixas etárias. Utilizando avatares felinos neutros e mecânicas lúdicas em pixel art, o software busca desmistificar conceitos cívicos fundamentais — desde regras de convivência social e ambiental na infância até sistemas de votação, plebiscitos e júri popular para jovens e adultos —, garantindo recursos práticos de acessibilidade digital.
+            </p>
+          </div>
+        </article>
+
+        <!-- 02. METODOLOGIA DETALHADA -->
+        <article class="paper-section-box reveal-item">
+          <div class="paper-section-header">
+            <span class="paper-tag-num">02</span>
+            <div>
+              <span class="paper-eyebrow">Abordagem Quanti-Qualitativa & Experimental</span>
+              <h2 class="paper-main-title">Metodologia de Desenvolvimento</h2>
+            </div>
+          </div>
+
+          <div class="paper-text-content">
+            <p>
+              A pesquisa adotou uma metodologia de base tecnológica, dividida em quatro etapas interdependentes e contínuas:
+            </p>
+
+            <div class="grid grid-2 sub-paper-grid">
+              
+              <div class="card sub-method-card">
+                <div class="sub-method-header">
+                  <span class="sub-method-icon" aria-hidden="true">🎨</span>
+                  <h3 class="sub-method-title">Concepção Artística & Interface</h3>
+                </div>
+                <p class="card-text">
+                  Criação autoral de todos os sprites, cenários em malha 32x32 pixels e interfaces gráficas construídas no software <strong>Aseprite</strong>. Foi priorizada uma paleta em tons pastéis acessíveis com testes de contraste visual de acordo com as diretrizes WCAG AA.
+                </p>
+              </div>
+
+              <div class="card sub-method-card">
+                <div class="sub-method-header">
+                  <span class="sub-method-icon" aria-hidden="true">⚙️</span>
+                  <h3 class="sub-method-title">Desenvolvimento & Programação</h3>
+                </div>
+                <p class="card-text">
+                  Implementação no motor <strong>Godot Engine 4</strong>, utilizando GDScript estruturado. A arquitetura fez uso intensivo de nós de interface (<em>Control</em>), colisores de eventos (<em>Area2D</em>) e manipulação dinâmica de camadas de mapa (<em>TileMapLayers</em>).
+                </p>
+              </div>
+
+              <div class="card sub-method-card">
+                <div class="sub-method-header">
+                  <span class="sub-method-icon" aria-hidden="true">🧩</span>
+                  <h3 class="sub-method-title">Arquitetura Modular</h3>
+                </div>
+                <p class="card-text">
+                  Segmentação da aplicação em dois eixos independentes: o <strong>Módulo Cidadão Mirim</strong> (focado em microcidadania e convívio escolar) e o <strong>Módulo Democracia</strong> (focado em processos institucionais, plebiscitos, júri simulado e eleições).
+                </p>
+              </div>
+
+              <div class="card sub-method-card">
+                <div class="sub-method-header">
+                  <span class="sub-method-icon" aria-hidden="true">🏫</span>
+                  <h3 class="sub-method-title">Validação de Campo</h3>
+                </div>
+                <p class="card-text">
+                  Aplicação prática de testes de usabilidade e coleta de dados através de questionários estruturados com estudantes do 4º ano do Ensino Fundamental na <strong>E.E.F. Senador Carlos Jereissati</strong>.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- 03. ACESSIBILIDADE & DESIGN INCLUSIVO -->
+        <article class="paper-section-box reveal-item">
+          <div class="paper-section-header">
+            <span class="paper-tag-num">03</span>
+            <div>
+              <span class="paper-eyebrow">Engenharia Inclusiva</span>
+              <h2 class="paper-main-title">Recursos de Acessibilidade & Inclusão</h2>
+            </div>
+          </div>
+
+          <div class="paper-text-content">
+            <p>
+              Para assegurar que o aprendizado cívico seja universal e livre de barreiras cognitivas ou motoras, foram implementadas diretrizes essenciais de acessibilidade:
+            </p>
+
+            <ul class="paper-check-list">
+              <li>
+                <strong>Feedback Auditivo Padronizado:</strong> Respostas sonoras claras para ações de confirmação, avanço de diálogos, erros e sucesso nas decisões cívicas.
+              </li>
+              <li>
+                <strong>Navegação Facilitada por Atalhos:</strong> Menus e botões configurados para controle direto tanto via teclado/mouse no PC quanto por toques responsivos no Android.
+              </li>
+              <li>
+                <strong>Contraste Visual e Tipografia Escalonada:</strong> Caixas de texto com fundo delimitado e fontes com proporções de leitura confortáveis para ambientes de sala de aula com iluminação variável.
+              </li>
+              <li>
+                <strong>Avatares Felinos Neutros:</strong> Uso de personagens felinos sem viés de gênero, etnia ou julgamento estético, gerando identificação imediata e acolhimento para qualquer criança ou jovem.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 04. RESULTADOS -->
+        <article class="paper-section-box reveal-item">
+          <div class="paper-section-header">
+            <span class="paper-tag-num">04</span>
+            <div>
+              <span class="paper-eyebrow">Dados Coletados & Avaliação</span>
+              <h2 class="paper-main-title">Resultados Obtidos</h2>
+            </div>
+          </div>
+
+          <div class="paper-text-content">
+            <div class="grid grid-2">
+              
+              <div class="result-metric-card">
+                <span class="result-category-tag">Desempenho</span>
+                <h3 class="result-card-title">Funcionalidade do Software</h3>
+                <p class="result-card-desc">
+                  Execução estável em aplicação local autônoma (<em>standalone .exe</em> e <em>.apk</em>), viabilizando acesso pleno sem dependência de internet durante apresentações e no cotidiano escolar.
+                </p>
+              </div>
+
+              <div class="result-metric-card">
+                <span class="result-category-tag">Engajamento</span>
+                <h3 class="result-card-title">Validação do Módulo Mirim</h3>
+                <p class="result-card-desc">
+                  Alto índice de envolvimento e participação voluntária entre os estudantes do 4º ano nos minigames de travessia segura, organização de fila e descarte na coleta seletiva.
+                </p>
+              </div>
+
+              <div class="result-metric-card">
+                <span class="result-category-tag">Pedagogia</span>
+                <h3 class="result-card-title">Fixação Conceitual</h3>
+                <p class="result-card-desc">
+                  A apuração dos questionários apontou excelente assimilação das regras de convivência ética e facilidade intuitiva na navegação por atalhos diretos na interface.
+                </p>
+              </div>
+
+              <div class="result-metric-card">
+                <span class="result-category-tag">Co-criação</span>
+                <h3 class="result-card-title">Design Participativo</h3>
+                <p class="result-card-desc">
+                  Incorporação contínua de melhorias visuais e ajustes de ritmo a partir do feedback verbal imediato dos alunos, consolidando o caráter colaborativo da ferramenta.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- 05. CONSIDERAÇÕES FINAIS -->
+        <article class="paper-section-box paper-final-box reveal-item">
+          <div class="paper-section-header">
+            <span class="paper-tag-num">05</span>
+            <div>
+              <span class="paper-eyebrow">Conclusões da Pesquisa</span>
+              <h2 class="paper-main-title">Considerações Finais</h2>
+            </div>
+          </div>
+
+          <div class="paper-text-content">
+            <p>
+              O desenvolvimento do <strong>CiviCats</strong> demonstra a viabilidade do uso de motores de jogos e lógica de programação como instrumentos pedagógicos eficazes para o ensino cívico.
+            </p>
+            <p>
+              A estrutura modular e a aplicação rigorosa de diretrizes de acessibilidade asseguram que o aprendizado democrático ocorra de maneira dinâmica, inclusiva e adaptada a diferentes realidades socioeducacionais. O projeto consolida-se como uma <strong>tecnologia social reprodutível</strong> para escolas da rede pública de ensino, integrando ciência da computação, design inclusivo e formação cidadã transformadora.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Banner de Download -->
+    <section class="cta-banner reveal-item">
+      <div class="container cta-banner-container">
+        <h2 class="cta-banner-title">Conheça o CiviCats na Prática</h2>
+        <p class="cta-banner-desc">Baixe gratuitamente os arquivos executáveis para Windows ou Android e teste em sua escola.</p>
+        <a href="downloads.html" class="btn btn-wood btn-lg">
+          Acessar Página de Downloads
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="brand">
+          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+        </div>
+        <p class="footer-desc">Projeto desenvolvido no âmbito do Ceará Científico para fomento do letramento democrático e tecnologia social pública.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-heading">Navegação</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="metodologia.html">Metodologia</a></li>
+          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h3 class="footer-heading">Engenharia</h3>
+        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
+        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
+        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

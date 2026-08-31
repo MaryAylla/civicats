@@ -1,0 +1,1959 @@
+/* ==========================================================================
+   1. DESIGN TOKENS (Céu Pastel, Madeira & Rosa Sakura das Cerejeiras)
+   ========================================================================== */
+:root {
+  /* Tons Principais de Azul Pastel (Céu) */
+  --sky-blue-deep: #2589cc;
+  --sky-blue-hover: #1b6da4;
+  --sky-blue-pastel: #7ecbf7;
+  --sky-blue-soft: #cbeaff;
+  --sky-blue-lightest: #f0f8ff;
+
+  /* Tons Amadeirados para Títulos e Botões */
+  --title-brown: #5d361d;         /* Marrom escuro para títulos e legibilidade */
+  --accent-wood: #8d5b3d;         /* Madeira clássica dos botões */
+  --accent-wood-hover: #73482d;   
+  --accent-wood-shadow: #4d2a13;
+  --accent-yellow: #fbd869;
+
+  /* Paleta Rosa Pastel (Árvores Cerejeiras da Tela Inicial) */
+  --sakura-pink: #f9c2cb;         /* Tom principal da copa da árvore */
+  --sakura-pink-border: #f5a8b6;  /* Borda rosada com definição */
+  --sakura-pink-soft: #fff0f3;    /* Fundo ultra-suave para tags e caixas */
+  --sakura-pink-shadow: rgba(245, 168, 182, 0.45); /* Brilho/sombra rosa suave */
+
+  /* Tags de Categoria */
+  --accent-green-tag: #dcfce7;
+  --accent-green-text: #15803d;
+
+  /* Superfícies e Textos */
+  --bg-main: var(--sky-blue-lightest);
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #e6f4fd;
+
+  --text-main: #0e2942;
+  --text-muted: #4a6b85;
+  --border-color: #bee0f7;
+
+  /* Dimensões e Efeitos */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Fontes */
+  --font-text: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ==========================================================================
+   2. ACESSIBILIDADE E BADGES
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--title-brown);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  z-index: 1000;
+  transition: top var(--transition);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sakura-pink-border);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Badge do Ceará Científico em Rosa Pastel das Cerejeiras */
+.pixel-badge {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  line-height: 1.4;
+  padding: 0.55rem 1rem;
+  background-color: var(--sakura-pink-soft);
+  color: var(--title-brown);
+  border: 1.5px solid var(--sakura-pink-border);
+  box-shadow: 0 3px 8px var(--sakura-pink-shadow);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid var(--sakura-pink-border);
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-cat-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  transition: transform var(--transition);
+}
+
+.brand:hover .brand-cat-icon {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.brand-logo-nav {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-pixel);
+  font-size: 0.725rem;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color var(--transition);
+  position: relative;
+  padding-block: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--title-brown);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--title-brown);
+  border-radius: 2px;
+}
+
+.btn-nav-compact {
+  padding: 0.45rem 1rem !important;
+  font-size: 0.65rem !important;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger-bar {
+  width: 24px;
+  height: 3px;
+  background-color: var(--title-brown);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ==========================================================================
+   4. BOTÕES RETRÔ
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  letter-spacing: 0.5px;
+}
+
+.btn-lg {
+  padding: 1.1rem 2rem;
+  font-size: 0.8rem;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  background-color: var(--sky-blue-deep);
+  color: #ffffff;
+  border-bottom: 4px solid var(--sky-blue-hover);
+  box-shadow: 0 4px 14px rgba(37, 137, 204, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--sky-blue-hover);
+  transform: translateY(-2px);
+}
+
+.btn-wood {
+  background-color: var(--accent-wood);
+  color: #ffffff;
+  border-bottom: 4px solid var(--accent-wood-shadow);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-wood:hover {
+  background-color: var(--accent-wood-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border-color: var(--sakura-pink-border);
+  background-color: #ffffff;
+  color: var(--title-brown);
+  border-bottom: 4px solid var(--sakura-pink-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--sakura-pink-soft);
+  border-color: var(--sakura-pink);
+  color: var(--title-brown);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. HERO & TÍTULO PRINCIPAL EM MARROM
+   ========================================================================== */
+.hero-home {
+  padding-block: 5rem 4rem;
+  background: linear-gradient(180deg, #d2edfc 0%, var(--bg-main) 100%);
+  text-align: center;
+}
+
+.hero-home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floating-logo-stage {
+  margin-bottom: 2rem;
+  animation: float-logo 3.8s ease-in-out infinite;
+}
+
+.floating-logo-img {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 22px rgba(14, 41, 66, 0.22));
+  image-rendering: pixelated;
+}
+
+@keyframes float-logo {
+  0%, 100% {
+    transform: translateY(0) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(0.5deg);
+  }
+}
+
+.hero-home-body {
+  max-width: 780px;
+}
+
+/* Título em Tom Marrom Escuro */
+.hero-home-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--title-brown);
+}
+
+.hero-home-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2.25rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   6. SHOWCASE COM BORDAS E SOMBRAS ROSA PASTEL
+   ========================================================================== */
+.section {
+  padding-block: 4.5rem;
+}
+
+.section-showcase {
+  padding-top: 1rem;
+}
+
+.showcase-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 32px var(--sakura-pink-shadow);
+  overflow: hidden;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.showcase-header {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--sakura-pink-soft);
+  border-bottom: 1.5px solid var(--sakura-pink-border);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.control-dot.red { background-color: #f87171; }
+.control-dot.yellow { background-color: var(--accent-yellow); }
+.control-dot.green { background-color: #4ade80; }
+
+.window-title {
+  margin-inline: auto;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--title-brown);
+}
+
+.showcase-media {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.showcase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.showcase-caption {
+  padding: 1.25rem 1.75rem;
+  background-color: var(--bg-surface);
+  border-top: 1.5px solid var(--sakura-pink-border);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. DESTAQUES COM CARDS EM ROSA SAKURA & TÍTULOS EM MARROM
+   ========================================================================== */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+/* Título de Seção em Marrom */
+.section-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  color: var(--title-brown);
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+
+/* Cards com Borda e Sombra Rosa Pastel */
+.card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 6px 18px var(--sakura-pink-shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #f294a5;
+  box-shadow: 0 12px 26px rgba(242, 148, 165, 0.55);
+}
+
+/* Caixa do Ícone com Fundo Rosa Pastel e Cor Marrom */
+.highlight-icon-box {
+  width: 58px;
+  height: 58px;
+  background: var(--sakura-pink-soft);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--title-brown);
+  transition: all var(--transition);
+}
+
+.card:hover .highlight-icon-box {
+  background-color: var(--accent-wood);
+  color: #ffffff;
+  border-color: var(--accent-wood-shadow);
+  transform: scale(1.05);
+}
+
+.icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.highlight-title {
+  font-family: var(--font-pixel);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: var(--title-brown);
+}
+
+.highlight-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   8. PRÉVIAS DOS MÓDULOS (TEASERS)
+   ========================================================================== */
+.section-modules-teaser {
+  background-color: var(--bg-surface-alt);
+}
+
+.module-teaser-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.teaser-image-wrap {
+  position: relative;
+  background-color: #0b1e30;
+  height: 230px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--sakura-pink-border);
+}
+
+.teaser-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  transition: transform 0.4s ease;
+}
+
+.module-teaser-card:hover .teaser-img {
+  transform: scale(1.06);
+}
+
+.teaser-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.tag-mirim {
+  background-color: var(--accent-green-tag);
+  color: var(--accent-green-text);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.tag-jovem {
+  background-color: var(--sakura-pink-soft);
+  color: var(--title-brown);
+  border: 1px solid var(--sakura-pink-border);
+}
+
+.teaser-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.teaser-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: var(--title-brown);
+}
+
+.teaser-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.card-link {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--title-brown);
+  text-decoration: none;
+}
+
+.card-link:hover {
+  color: var(--accent-wood-hover);
+  text-decoration: underline;
+}
+
+.center-cta-wrap {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* ==========================================================================
+   9. BANNER COM FUNDO DA CIDADE
+   ========================================================================== */
+.cta-banner {
+  position: relative;
+  padding-block: 5.5rem;
+  background: 
+    linear-gradient(135deg, rgba(27, 109, 164, 0.92) 0%, rgba(14, 41, 66, 0.94) 100%),
+    url('../assets/images/preview-gameplay.png') center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  image-rendering: pixelated;
+
+  background: 
+    linear-gradient(135deg, rgba(27, 109, 164, 0.90) 0%, rgba(14, 41, 66, 0.92) 100%),
+    url('../assets/images/banner-bg.png') center/cover no-repeat;
+    
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-banner-container {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.cta-banner-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #ffffff; /* Fica branco para alto contraste com o fundo escuro */
+}
+
+.cta-banner-desc {
+  font-size: 1.15rem;
+  margin-bottom: 2.25rem;
+  opacity: 0.92;
+}
+
+/* ==========================================================================
+   10. RODAPÉ INSTITUCIONAL
+   ========================================================================== */
+.footer {
+  background-color: #ffffff;
+  border-top: 2px solid var(--sakura-pink-border);
+  padding-block: 4rem 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  max-width: 360px;
+}
+
+.footer-heading {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  color: var(--title-brown);
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.925rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--title-brown);
+}
+
+.footer-legal p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   11. ANIMAÇÕES DE SCROLL (REVEAL)
+   ========================================================================== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   12. MEDIA QUERIES
+   ========================================================================== */
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 4.75rem;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--sakura-pink-border);
+    padding: 2rem 1.5rem;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition), opacity var(--transition);
+    box-shadow: 0 10px 24px var(--sakura-pink-shadow);
+  }
+
+  .nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .floating-logo-img {
+    max-width: 290px;
+  }
+}
+
+/* ==========================================================================
+   13. ESTILOS EXCLUSIVOS DA PÁGINA DE MÓDULOS
+   ========================================================================== */
+.section-module-block {
+  padding-block: 4rem;
+}
+
+.section-alt-bg {
+  background-color: var(--bg-surface-alt);
+  border-block: 1.5px solid var(--border-color);
+}
+
+.module-section-banner {
+  margin-bottom: 2.5rem;
+}
+
+.module-tag-badge {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  background-color: var(--accent-green-tag);
+  color: var(--accent-green-text);
+  border: 1.5px solid rgba(21, 128, 61, 0.25);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.module-tag-jovem {
+  background-color: var(--sakura-pink-soft);
+  color: var(--title-brown);
+  border-color: var(--sakura-pink-border);
+}
+
+.module-group-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  line-height: 1.5;
+  color: var(--title-brown);
+  margin-bottom: 0.5rem;
+}
+
+.module-group-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 760px;
+}
+
+/* Cards dos Minigames */
+.minigame-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.minigame-thumb-wrap {
+  position: relative;
+  height: 200px;
+  background-color: #0b1e30;
+  overflow: hidden;
+  border-bottom: 2px solid var(--sakura-pink-border);
+}
+
+.minigame-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  transition: transform 0.4s ease;
+}
+
+.minigame-card:hover .minigame-thumb {
+  transform: scale(1.08);
+}
+
+/* Botão de Zoom na imagem */
+.btn-zoom-trigger {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(93, 54, 29, 0.88);
+  border: 1.5px solid var(--sakura-pink-border);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all var(--transition);
+}
+
+.btn-zoom-trigger:hover {
+  background-color: var(--title-brown);
+  transform: scale(1.1);
+}
+
+.zoom-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.minigame-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.game-number-tag {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--sky-blue-deep);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.minigame-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--title-brown);
+  margin-bottom: 0.6rem;
+}
+
+.minigame-focus {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  background-color: var(--bg-surface-alt);
+  border-left: 3px solid var(--sakura-pink-border);
+  padding: 0.35rem 0.65rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.minigame-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   14. SEÇÃO DE PROGRESSÃO DO JOGADOR
+   ========================================================================== */
+.section-progression {
+  background: linear-gradient(180deg, var(--bg-main) 0%, #e6f4fd 100%);
+  padding-block: 5rem;
+}
+
+.progression-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.progression-step {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: 0 6px 18px var(--sakura-pink-shadow);
+  flex: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.step-num {
+  font-family: var(--font-pixel);
+  font-size: 1.5rem;
+  color: var(--sakura-pink-border);
+  margin-bottom: 0.5rem;
+}
+
+.step-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  color: var(--title-brown);
+  margin-bottom: 0.6rem;
+}
+
+.step-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+}
+
+.progression-arrow {
+  font-size: 1.75rem;
+  color: var(--title-brown);
+  transform: rotate(90deg);
+}
+
+@media (min-width: 768px) {
+  .progression-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .progression-arrow {
+    transform: rotate(0deg);
+    align-self: center;
+  }
+}
+
+/* ==========================================================================
+   15. MODAL NATIVA ACESSÍVEL (<dialog>)
+   ========================================================================== */
+.game-modal {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 780px;
+  width: 90%;
+  margin: auto;
+  border-radius: var(--radius-md);
+}
+
+.game-modal::backdrop {
+  background-color: rgba(14, 41, 66, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.modal-box {
+  background-color: var(--bg-surface);
+  border: 2.5px solid var(--sakura-pink-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 45px rgba(14, 41, 66, 0.4);
+  overflow: hidden;
+  animation: modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--sakura-pink-soft);
+  border-bottom: 2px solid var(--sakura-pink-border);
+}
+
+.modal-title {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--title-brown);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--title-brown);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(93, 54, 29, 0.1);
+}
+
+.modal-media {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  max-height: 420px;
+  overflow: hidden;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   16. ESTILOS EXCLUSIVOS DA PÁGINA DE METODOLOGIA
+   ========================================================================== */
+.section-method-steps {
+  padding-block: 4rem 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.step-summary-card {
+  position: relative;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-summary-badge {
+  position: absolute;
+  top: -12px;
+  background-color: var(--title-brown);
+  color: #ffffff;
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.step-summary-title {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--title-brown);
+  margin-bottom: 0.5rem;
+}
+
+.step-summary-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Blocos do Relatório Científico */
+.section-paper-body {
+  padding-block: 2rem 5rem;
+}
+
+.academic-container {
+  max-width: 920px;
+}
+
+.paper-section-box {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-md);
+  padding: 2.75rem 2.5rem;
+  margin-bottom: 2.75rem;
+  box-shadow: 0 8px 24px var(--sakura-pink-shadow);
+}
+
+.paper-final-box {
+  background: linear-gradient(180deg, #ffffff 0%, var(--sakura-pink-soft) 100%);
+  border-color: var(--sakura-pink-border);
+}
+
+.paper-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--sakura-pink-soft);
+}
+
+.paper-tag-num {
+  font-family: var(--font-pixel);
+  font-size: 1.6rem;
+  color: var(--sakura-pink-border);
+  line-height: 1;
+}
+
+.paper-eyebrow {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--sky-blue-deep);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.paper-main-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  line-height: 1.4;
+  color: var(--title-brown);
+}
+
+.paper-text-content p {
+  color: var(--text-main);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.paper-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.sub-paper-grid {
+  margin-top: 1.75rem;
+}
+
+.sub-method-card {
+  padding: 1.5rem;
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-color);
+  box-shadow: none;
+}
+
+.sub-method-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sakura-pink-border);
+}
+
+.sub-method-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sub-method-icon {
+  font-size: 1.5rem;
+}
+
+.sub-method-title {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--title-brown);
+}
+
+/* Lista de Acessibilidade */
+.paper-check-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paper-check-list li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.paper-check-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--sky-blue-deep);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* Cards de Resultados */
+.result-metric-card {
+  background-color: var(--bg-surface-alt);
+  border-left: 4px solid var(--sky-blue-deep);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: transform var(--transition);
+}
+
+.result-metric-card:hover {
+  transform: translateY(-3px);
+}
+
+.result-category-tag {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--sky-blue-deep);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: inline-block;
+}
+
+.result-card-title {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--title-brown);
+  margin-bottom: 0.5rem;
+}
+
+.result-card-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .paper-section-box {
+    padding: 1.75rem 1.25rem;
+  }
+  .paper-section-header {
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   17. ESTILOS EXCLUSIVOS DA PÁGINA SOBRE & CONTATO
+   ========================================================================== */
+.section-team {
+  padding-block: 4rem 2rem;
+}
+
+.grid-team {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.team-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.75rem;
+  position: relative;
+}
+
+.team-avatar-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--sakura-pink-soft);
+  border: 2px solid var(--sakura-pink-border);
+  box-shadow: 0 4px 12px var(--sakura-pink-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition);
+}
+
+.team-card:hover .team-avatar-box {
+  transform: scale(1.1) rotate(5deg);
+  background-color: #ffffff;
+}
+
+.avatar-coord {
+  background: var(--sky-blue-soft);
+  border-color: var(--sky-blue-deep);
+}
+
+.team-role-icon {
+  font-size: 2rem;
+}
+
+.team-role-tag {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--sky-blue-deep);
+  background-color: var(--sky-blue-soft);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-coord {
+  background-color: var(--sakura-pink-soft);
+  color: var(--title-brown);
+  border: 1px solid var(--sakura-pink-border);
+}
+
+.team-name {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  color: var(--title-brown);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.team-handle {
+  margin-bottom: 1rem;
+}
+
+.social-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-wood);
+  text-decoration: none;
+  background-color: var(--bg-surface-alt);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-color);
+  transition: all var(--transition);
+}
+
+.social-tag:hover {
+  background-color: var(--title-brown);
+  color: #ffffff;
+  border-color: var(--title-brown);
+}
+
+.team-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Card Destacado de Coordenação */
+.team-card-coord {
+  border: 2.5px solid var(--sakura-pink-border);
+  background: linear-gradient(180deg, #ffffff 0%, var(--sakura-pink-soft) 100%);
+}
+
+/* Seção de Missão */
+.section-mission {
+  padding-block: 2.5rem;
+}
+
+.mission-box {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 28px var(--sakura-pink-shadow);
+  max-width: 960px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mission-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.15rem, 2.3vw, 1.5rem);
+  color: var(--title-brown);
+  margin-block: 1rem;
+}
+
+.mission-content p {
+  color: var(--text-main);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.mission-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Seção de Contato */
+.section-contact {
+  padding-block: 3rem 5rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-panel-title {
+  font-family: var(--font-pixel);
+  font-size: 1.35rem;
+  color: var(--title-brown);
+  margin-bottom: 1rem;
+}
+
+.contact-panel-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.contact-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  background-color: var(--sakura-pink-soft);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--sakura-pink-border);
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--title-brown);
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Formulário */
+.contact-form-card {
+  padding: 2.5rem 2rem;
+}
+
+.form-title {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  color: var(--title-brown);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: all var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-wood);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(141, 91, 61, 0.2);
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-error-msg {
+  display: none;
+  color: #dc2626;
+  font-size: 0.775rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.form-group.has-error .form-input {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.form-group.has-error .form-error-msg {
+  display: block;
+}
+
+.form-success-banner {
+  display: none;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: var(--accent-green-tag);
+  color: var(--accent-green-text);
+  border: 1.5px solid rgba(21, 128, 61, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  animation: modal-pop 0.3s ease;
+}
+
+.form-success-banner.is-active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .grid-team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-team {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team-svg-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--title-brown);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.avatar-coord .team-svg-icon {
+  color: var(--sky-blue-deep);
+}
+
+.team-card:hover .team-svg-icon {
+  color: var(--title-brown);
+  transform: scale(1.08);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: var(--sakura-pink-soft);
+  border: 1.5px solid var(--sakura-pink-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-svg-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--title-brown);
+}
+
+.btn-icon-svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.form-success-banner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: var(--accent-green-tag);
+  color: var(--accent-green-text);
+  border: 1.5px solid rgba(21, 128, 61, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  animation: modal-pop 0.3s ease;
+}
+
+.form-success-banner.is-active {
+  display: flex;
+}
+
+.success-icon-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   18. ESTILOS EXCLUSIVOS DA PÁGINA DE DOWNLOADS
+   ========================================================================== */
+.section-downloads-main {
+  padding-block: 4rem 3rem;
+}
+
+.download-grid {
+  display: grid;
+  gap: 2.25rem;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 2.25rem;
+  position: relative;
+}
+
+/* Card Destacado automaticamente via JS pelo SO do Usuário */
+.download-card.is-detected {
+  border: 2.5px solid var(--accent-wood);
+  box-shadow: 0 12px 30px rgba(141, 91, 61, 0.28);
+}
+
+.download-card.is-detected::before {
+  content: "Recomendado para seu sistema";
+  position: absolute;
+  top: -13px;
+  left: 1.75rem;
+  background-color: var(--accent-wood);
+  color: #ffffff;
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(93, 54, 29, 0.35);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.platform-icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: var(--sakura-pink-soft);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--title-brown);
+}
+
+.platform-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.platform-type-tag {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--sky-blue-deep);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.platform-name {
+  font-family: var(--font-pixel);
+  font-size: 1.25rem;
+  color: var(--title-brown);
+  margin-bottom: 0.2rem;
+}
+
+.platform-version-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.specs-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.specs-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.65rem;
+  border-bottom: 1px dashed var(--border-color);
+  font-size: 0.95rem;
+}
+
+.specs-list li:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--text-muted);
+}
+
+.spec-value {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.spec-value code {
+  background-color: var(--sky-blue-soft);
+  color: var(--sky-blue-deep);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.download-action-wrap {
+  margin-top: 1rem;
+}
+
+.quick-instruction-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   19. TABELA DE REQUISITOS DE SISTEMA
+   ========================================================================== */
+.section-specs {
+  background-color: var(--bg-surface-alt);
+  border-block: 1.5px solid var(--border-color);
+  padding-block: 4.5rem;
+}
+
+.table-responsive-box {
+  max-width: 960px;
+  margin-inline: auto;
+  overflow-x: auto;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--sakura-pink-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px var(--sakura-pink-shadow);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.specs-table thead th {
+  background-color: var(--sakura-pink-soft);
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: var(--title-brown);
+  border-bottom: 2px solid var(--sakura-pink-border);
+}
+
+.specs-table tbody th {
+  font-weight: 700;
+  color: var(--text-main);
+  background-color: rgba(240, 248, 255, 0.5);
+  width: 28%;
+}
+
+.specs-table tbody tr:last-child th,
+.specs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table tbody tr:hover td {
+  background-color: var(--bg-surface-alt);
+}
+
+/* ==========================================================================
+   20. GUIA PASSO A PASSO
+   ========================================================================== */
+.section-instructions {
+  padding-block: 4.5rem;
+}
+
+.instruction-card {
+  padding: 2.5rem 2rem;
+}
+
+.instruction-platform-tag {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--accent-wood);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.instruction-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--title-brown);
+  margin-bottom: 1.5rem;
+}
+
+.step-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.step-index {
+  width: 36px;
+  height: 36px;
+  background-color: var(--sakura-pink-soft);
+  border: 1.5px solid var(--sakura-pink-border);
+  border-radius: 50%;
+  color: var(--title-brown);
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-item strong {
+  display: block;
+  color: var(--title-brown);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.step-item p {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.step-item em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.step-item code {
+  background-color: var(--sky-blue-soft);
+  color: var(--sky-blue-deep);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .download-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

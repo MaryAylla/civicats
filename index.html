@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CiviCats - Jogo digital educativo em 2D voltado à simulação de processos democráticos e letramento cívico lúdico.">
+  <meta name="theme-color" content="#7ecbf7">
+
+  <title>CiviCats | Início - Letramento Cívico Lúdico</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts: Press Start 2P (Pixel Art) + Plus Jakarta Sans (Corpo do Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Acessibilidade: Atalho de Teclado -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+      </a>
+
+      <!-- Botão Hamburguer Mobile -->
+      <button 
+        class="mobile-toggle" 
+        id="menu-toggle" 
+        aria-label="Abrir menu de navegação" 
+        aria-expanded="false" 
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navegação Principal -->
+      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Início</a></li>
+          <li><a href="modulos.html" class="nav-link">Os Módulos</a></li>
+          <li><a href="metodologia.html" class="nav-link">Metodologia</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre & Contato</a></li>
+          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- Hero Section: Logo Flutuante & Apresentação -->
+    <section class="hero-home">
+      <div class="container hero-home-container">
+        
+        <div class="floating-logo-stage" data-parallax="0.1">
+          <img 
+            src="assets/images/logo-civicats.png" 
+            alt="Logotipo oficial do jogo CiviCats em letras amarelas pixelizadas" 
+            class="floating-logo-img"
+          >
+        </div>
+
+        <div class="hero-home-body reveal-item">
+          <span class="pixel-badge">Ceará Científico • Tecnologia Social</span>
+          <h1 class="hero-home-title">Cidadania e Democracia em Quatro Patas</h1>
+          <p class="hero-home-desc">
+            Uma ferramenta educativa digital em 2D que transforma o ensino cívico em vivência prática: da microcidadania escolar ao voto direto em plebiscitos e julgamentos populares.
+          </p>
+
+          <div class="hero-actions">
+            <a href="downloads.html" class="btn btn-primary btn-lg">
+              Baixar Jogo Grátis
+            </a>
+            <a href="modulos.html" class="btn btn-outline btn-lg">
+              Conhecer os Módulos
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Showcase do Jogo -->
+    <section class="section section-showcase reveal-item">
+      <div class="container">
+        <div class="showcase-card">
+          <div class="showcase-header">
+            <div class="window-controls" aria-hidden="true">
+              <span class="control-dot red"></span>
+              <span class="control-dot yellow"></span>
+              <span class="control-dot green"></span>
+            </div>
+            <span class="window-title">CiviCats - Build Godot 4 v1.0.0</span>
+          </div>
+
+          <div class="showcase-media">
+            <img 
+              src="assets/images/preview-gameplay.png" 
+              alt="Cenário do jogo CiviCats exibindo cidade e árvores em pixel art"
+              class="showcase-img"
+            >
+          </div>
+          
+          <div class="showcase-caption">
+            <p><strong>Motor Godot 4 & Aseprite:</strong> Gráficos em pixel art de alto desempenho, física responsiva e funcionamento autônomo sem travar em computadores escolares.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Destaques com Ícones Vetoriais SVG -->
+    <section class="section section-highlights">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <h2 class="section-title">Por que o CiviCats é Diferente?</h2>
+          <p class="section-desc">A união prática entre ciência da computação, design inclusivo e formação cidadã.</p>
+        </div>
+
+        <div class="grid grid-3">
+          
+          <!-- Card 1: Controle de Jogo -->
+          <article class="card highlight-card reveal-item" data-delay="100">
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="4" />
+                <path d="M6 12h4m-2-2v4m9-2h.01m3 0h.01" />
+              </svg>
+            </div>
+            <h3 class="highlight-title">Letramento Lúdico</h3>
+            <p class="highlight-text">
+              Transforma conceitos cívicos abstratos em decisões interativas. O jogador aprende na prática que escolhas individuais moldam o bem-estar coletivo.
+            </p>
+          </article>
+
+          <!-- Card 2: Acessibilidade -->
+          <article class="card highlight-card reveal-item" data-delay="200">
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="4" r="2" />
+                <path d="M4 8h16M12 8v13m-4-7h8" />
+              </svg>
+            </div>
+            <h3 class="highlight-title">Design Inclusivo</h3>
+            <p class="highlight-text">
+              Paletas de alto contraste testadas contra barreiras visuais, feedback sonoro padronizado em todas as ações e navegação facilitada por atalhos diretos.
+            </p>
+          </article>
+
+          <!-- Card 3: Offline / Nuvem -->
+          <article class="card highlight-card reveal-item" data-delay="300">
+            <div class="highlight-icon-box" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+                <path d="m8 15 4 4 4-4m-4 4V9" />
+              </svg>
+            </div>
+            <h3 class="highlight-title">Acesso 100% Offline</h3>
+            <p class="highlight-text">
+              Arquivos portáteis independentes (.exe e .apk) que funcionam perfeitamente sem conexão com a internet, garantindo acesso universal a qualquer escola.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Prévia dos Dois Módulos -->
+    <section class="section section-modules-teaser">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <h2 class="section-title">Estrutura Pedagógica</h2>
+          <p class="section-desc">Módulos adaptados à maturidade cognitiva de cada faixa etária.</p>
+        </div>
+
+        <div class="grid grid-2">
+          
+          <!-- Card Mirim -->
+          <article class="card module-teaser-card reveal-item" data-delay="150">
+            <div class="teaser-image-wrap">
+              <img 
+                src="assets/images/preview-mirim.png" 
+                alt="Minigames de regras de convivência do Módulo Mirim" 
+                class="teaser-img"
+              >
+              <span class="teaser-tag tag-mirim">Ensino Fundamental I</span>
+            </div>
+            
+            <div class="teaser-content">
+              <h3 class="teaser-title">Módulo Mirim</h3>
+              <p class="teaser-desc">
+                Compreensão da <strong>microcidadania</strong>: regras de fila na escola, respeito à faixa de pedestres e consciência ecológica na coleta seletiva.
+              </p>
+              <a href="modulos.html#mirim" class="card-link">Explorar minigames mirins &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card Jovem -->
+          <article class="card module-teaser-card reveal-item" data-delay="300">
+            <div class="teaser-image-wrap">
+              <img 
+                src="assets/images/preview-jovem.png" 
+                alt="Minigames de plebiscito e eleições do Módulo Jovem" 
+                class="teaser-img"
+              >
+              <span class="teaser-tag tag-jovem">Fundamental II & Médio</span>
+            </div>
+
+            <div class="teaser-content">
+              <h3 class="teaser-title">Módulo Democracia</h3>
+              <p class="teaser-desc">
+                Compreensão de <strong>processos institucionais</strong>: plebiscitos com transformação urbana em tempo real, tribunal de júri simulado e urnas eleitorais.
+              </p>
+              <a href="modulos.html#jovem" class="card-link">Explorar minigames democráticos &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="center-cta-wrap reveal-item">
+          <a href="modulos.html" class="btn btn-outline btn-lg">Ver Todos os Detalhes dos Módulos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Final com Fundo da Cidade em Baixa Opacidade -->
+    <section class="cta-banner reveal-item">
+      <div class="container cta-banner-container">
+        <h2 class="cta-banner-title">Pronto para Jogar?</h2>
+        <p class="cta-banner-desc">Disponível gratuitamente para computadores Windows e dispositivos Android.</p>
+        <a href="downloads.html" class="btn btn-wood btn-lg">
+          Baixar CiviCats Agora
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="brand">
+          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+        </div>
+        <p class="footer-desc">Tecnologia social desenvolvida para o Ceará Científico voltada ao fortalecimento da cidadania e educação pública.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-heading">Navegação</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="metodologia.html">Metodologia</a></li>
+          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h3 class="footer-heading">Engenharia</h3>
+        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
+        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
+        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

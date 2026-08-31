@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os 6 minigames do CiviCats: Módulo Mirim (microcidadania) e Módulo Democracia (processos institucionais).">
+  <meta name="theme-color" content="#7ecbf7">
+
+  <title>CiviCats | Os Módulos & Minigames</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/cat-avatar.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+      </a>
+
+      <button 
+        class="mobile-toggle" 
+        id="menu-toggle" 
+        aria-label="Abrir menu de navegação" 
+        aria-expanded="false" 
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="modulos.html" class="nav-link active" aria-current="page">Os Módulos</a></li>
+          <li><a href="metodologia.html" class="nav-link">Metodologia</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre & Contato</a></li>
+          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- Cabeçalho da Página -->
+    <section class="page-header">
+      <div class="container">
+        <span class="pixel-badge">Arquitetura de Jogo • 2 Eixos Pedagógicos</span>
+        <h1 class="page-title">Módulos & Minigames</h1>
+        <p class="page-subtitle">
+          Uma jornada de letramento cívico estruturada progressivamente: do respeito ao espaço compartilhado na infância à participação política ativa na juventude.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 1: MÓDULO MIRIM ================= -->
+    <section id="mirim" class="section section-module-block">
+      <div class="container">
+        
+        <div class="module-section-banner reveal-item">
+          <div class="module-tag-badge">Eixo 01 • Microcidadania</div>
+          <h2 class="module-group-title">Módulo Cidadão Mirim</h2>
+          <p class="module-group-desc">
+            Voltado ao Ensino Fundamental I (crianças). Trabalha empatia, regras de convívio escolar, segurança no trânsito e sustentabilidade socioambiental.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          
+          <!-- Minigame 1: Não Furar a Fila -->
+          <article class="card minigame-card reveal-item" data-delay="100">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-mirim-fila.png" 
+                alt="Gameplay do minigame Não Furar a Fila" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Não Furar a Fila"
+                data-preview="assets/images/mod-mirim-fila.png"
+                data-title="Não Furar a Fila (Convivência Ética)"
+                data-desc="O jogador precisa respeitar a ordem de chegada na fila da merenda e entrada da escola, compreendendo que furar a vez prejudica o coletivo."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 01</span>
+              <h3 class="minigame-title">Não Furar a Fila</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Ética e Respeito Coletivo</p>
+              <p class="minigame-desc">
+                Desafios interativos de paciência e respeito aos acordos tácitos de convivência no refeitório e corredores escolares.
+              </p>
+            </div>
+          </article>
+
+          <!-- Minigame 2: Atravessar a Rua -->
+          <article class="card minigame-card reveal-item" data-delay="200">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-mirim-rua.png" 
+                alt="Gameplay do minigame Atravessar a Rua" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Atravessar a Rua"
+                data-preview="assets/images/mod-mirim-rua.png"
+                data-title="Atravessar na Faixa (Educação no Trânsito)"
+                data-desc="Ensina a aguardar o semáforo de pedestres e atravessar exclusivamente na faixa, pontuando que o trânsito seguro depende do respeito mútuo."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 02</span>
+              <h3 class="minigame-title">Atravessar a Rua</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Segurança Viária e Regras</p>
+              <p class="minigame-desc">
+                Simula o trânsito da cidade onde o jogador deve observar sinais e faixas para se deslocar com segurança.
+              </p>
+            </div>
+          </article>
+
+          <!-- Minigame 3: Coleta Seletiva -->
+          <article class="card minigame-card reveal-item" data-delay="300">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-mirim-lixo.png" 
+                alt="Gameplay do minigame Coleta Seletiva" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Coleta Seletiva"
+                data-preview="assets/images/mod-mirim-lixo.png"
+                data-title="Coleta Seletiva (Cuidado Ambiental)"
+                data-desc="Separação dinâmica de resíduos orgânicos, plásticos, metais e papéis nas lixeiras corretas, demonstrando o impacto do lixo no ecossistema urbano."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 03</span>
+              <h3 class="minigame-title">Coleta Seletiva</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Consciência Socioambiental</p>
+              <p class="minigame-desc">
+                Mecânica ágil de separação correta de descartes, pontuando o dever individual na preservação dos espaços públicos.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 2: MÓDULO JOVEM / DEMOCRACIA ================= -->
+    <section id="jovem" class="section section-module-block section-alt-bg">
+      <div class="container">
+        
+        <div class="module-section-banner reveal-item">
+          <div class="module-tag-badge module-tag-jovem">Eixo 02 • Processos Institucionais</div>
+          <h2 class="module-group-title">Módulo Democracia</h2>
+          <p class="module-group-desc">
+            Voltado ao Ensino Fundamental II e Médio. Simula mecanismos institucionais de tomada de decisão, justiça participativa e representatividade política.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          
+          <!-- Minigame 4: O Plebiscito -->
+          <article class="card minigame-card reveal-item" data-delay="100">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-jovem-plebiscito.png" 
+                alt="Gameplay do minigame do Plebiscito com transformação do mapa" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Plebiscito"
+                data-preview="assets/images/mod-jovem-plebiscito.png"
+                data-title="O Plebiscito (Democracia Direta)"
+                data-desc="O jogador vota em obras públicas comunitárias. O sistema de TileMapLayers da Godot 4 altera instantaneamente o mapa da cidade com base na decisão da maioria."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 04</span>
+              <h3 class="minigame-title">O Plebiscito</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Democracia Direta e Impacto Urbano</p>
+              <p class="minigame-desc">
+                Consultas populares onde os votos alteram permanentemente as camadas de mapa (<em>TileMapLayers</em>) da cidade felina.
+              </p>
+            </div>
+          </article>
+
+          <!-- Minigame 5: Júri Simulado -->
+          <article class="card minigame-card reveal-item" data-delay="200">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-jovem-juri.png" 
+                alt="Gameplay do minigame do Júri Simulado com tribunal felino" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Júri Simulado"
+                data-preview="assets/images/mod-jovem-juri.png"
+                data-title="Júri Simulado (Justiça e Argumentação)"
+                data-desc="Simulação de um julgamento popular onde o jogador analisa evidências, escuta testemunhas e pondera seu veredito com base na ética e nas leis."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 05</span>
+              <h3 class="minigame-title">Júri Simulado</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Justiça, Provas e Julgamento Ético</p>
+              <p class="minigame-desc">
+                Análise crítica de depoimentos e evidências para decidir o desfecho de dilemas éticos na corte da cidade.
+              </p>
+            </div>
+          </article>
+
+          <!-- Minigame 6: As Eleições -->
+          <article class="card minigame-card reveal-item" data-delay="300">
+            <div class="minigame-thumb-wrap">
+              <img 
+                src="assets/images/mod-jovem-eleicoes.png" 
+                alt="Gameplay do minigame das Eleições com cabine de votação" 
+                class="minigame-thumb"
+              >
+              <button 
+                type="button" 
+                class="btn-zoom-trigger" 
+                aria-label="Ampliar screenshot do minigame Eleições"
+                data-preview="assets/images/mod-jovem-eleicoes.png"
+                data-title="As Eleições (Voto e Representatividade)"
+                data-desc="Avaliação criteriosa de planos de governo de candidatos felinos, simulação da cabine de votação e compreensão do papel dos três poderes."
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+              </button>
+            </div>
+
+            <div class="minigame-body">
+              <span class="game-number-tag">Minigame 06</span>
+              <h3 class="minigame-title">As Eleições</h3>
+              <p class="minigame-focus"><strong>Conceito Central:</strong> Voto Consciente e Representação</p>
+              <p class="minigame-desc">
+                Simulação de propostas, debates e contagem de votos para entender o funcionamento do sistema representativo.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 3: FLUXO DE PROGRESSÃO DO JOGADOR ================= -->
+    <section class="section section-progression">
+      <div class="container">
+        
+        <div class="section-header reveal-item">
+          <h2 class="section-title">Como o Jogador Progride?</h2>
+          <p class="section-desc">Uma curva de aprendizado pensada para consolidar valores antes de exigir decisões institucionais complexas.</p>
+        </div>
+
+        <div class="progression-grid">
+          
+          <div class="progression-step reveal-item" data-delay="100">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Microcidadania</h3>
+            <p class="step-desc">O jogador aprende deveres cotidianos no Módulo Mirim: empatia, trânsito e meio ambiente.</p>
+          </div>
+
+          <div class="progression-arrow" aria-hidden="true">➔</div>
+
+          <div class="progression-step reveal-item" data-delay="200">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Impacto Coletivo</h3>
+            <p class="step-desc">No Plebiscito e no Júri, descobre como o diálogo e a análise de dados afetam o município.</p>
+          </div>
+
+          <div class="progression-arrow" aria-hidden="true">➔</div>
+
+          <div class="progression-step reveal-item" data-delay="300">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Voto Pleno</h3>
+            <p class="step-desc">Consolida o aprendizado nas Eleições, escolhendo representantes com base em programas éticos.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Banner de Download -->
+    <section class="cta-banner reveal-item">
+      <div class="container cta-banner-container">
+        <h2 class="cta-banner-title">Experimente os Minigames</h2>
+        <p class="cta-banner-desc">Baixe a versão para Windows ou Android e jogue todos os módulos gratuitamente.</p>
+        <a href="downloads.html" class="btn btn-wood btn-lg">
+          Ir para Downloads
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL NATIVA ACESSÍVEL (<dialog>) ================= -->
+  <dialog id="game-modal" class="game-modal" aria-labelledby="modal-title">
+    <div class="modal-box">
+      
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Detalhes do Minigame</h3>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-media">
+        <img id="modal-img" src="" alt="Screenshot ampliada do minigame" class="modal-img">
+      </div>
+
+      <div class="modal-body">
+        <p id="modal-desc" class="modal-desc"></p>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="brand">
+          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+        </div>
+        <p class="footer-desc">Projeto desenvolvido no âmbito do Ceará Científico para fomento do letramento democrático e tecnologia social pública.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-heading">Navegação</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="metodologia.html">Metodologia</a></li>
+          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h3 class="footer-heading">Engenharia</h3>
+        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
+        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
+        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
